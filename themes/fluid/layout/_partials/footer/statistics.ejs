@@ -1,10 +1,10 @@
 <div class="statistics">
-  <% let page_pv_texts = (theme.footer.statistics.page_pv_format || __('footer.ppv')).split('{}') %> <!-- Ìí¼ÓÒ³Ãæ·ÃÎÊ¼ÆÊý -->
+  <% let page_pv_texts = (theme.footer.statistics.page_pv_format || __('footer.ppv')).split('{}') %> <!-- æ·»åŠ é¡µé¢è®¿é—®è®¡æ•° -->
   <% let pv_texts = (theme.footer.statistics.pv_format || __('footer.pv')).split('{}') %>
   <% let uv_texts = (theme.footer.statistics.uv_format || __('footer.uv')).split('{}') %>
 
   <% if (theme.footer.statistics.source === 'leancloud') { %>
-    <!-- Ìí¼ÓÒ³Ãæ·ÃÎÊ¼ÆÊý -->
+    <!-- æ·»åŠ é¡µé¢è®¿é—®è®¡æ•° -->
     <% if (page_pv_texts.length >= 2) { %>
       <span id="leancloud-page-pv-container" style="display: none">
         <%- page_pv_texts[0] %>
@@ -29,7 +29,7 @@
     <% import_js(theme.static_prefix.internal_js, 'leancloud.js', 'defer') %>
 
   <% } else if (theme.footer.statistics.source === 'openkounter') { %>
-    <!-- Ìí¼ÓÒ³Ãæ·ÃÎÊ¼ÆÊý -->
+    <!-- æ·»åŠ é¡µé¢è®¿é—®è®¡æ•° -->
     <% if (page_pv_texts.length >= 2) { %>
       <span id="openkounter-page-pv-container" style="display: none">
         <%- page_pv_texts[0] %>
@@ -54,6 +54,13 @@
     <% import_js(theme.static_prefix.internal_js, 'openkounter.js', 'defer') %>
 
   <% } else if (theme.footer.statistics.source === 'busuanzi') { %>
+    <% if (page_pv_texts.length >= 2) { %>
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <%- page_pv_texts[0] %>
+        <span id="busuanzi_value_page_pv"></span>
+        <%- page_pv_texts[1] %>
+      </span>
+    <% } %>
     <% if (pv_texts.length >= 2) { %>
       <span id="busuanzi_container_site_pv" style="display: none">
         <%- pv_texts[0] %>
@@ -71,6 +78,13 @@
     <% import_js(theme.static_prefix.busuanzi, 'busuanzi.pure.mini.js', 'defer') %>
 
   <% } else if (theme.footer.statistics.source === 'umami') { %>
+    <% if (page_pv_texts.length >= 2) { %>
+      <span id="umami-page-pv-container" style="display: none">
+        <%- page_pv_texts[0] %>
+        <span id="umami-page-pv"></span>
+        <%- page_pv_texts[1] %>
+      </span>
+    <% } %>
     <% if (pv_texts.length >= 2) { %>
       <span id="umami-site-pv-container" style="display: none">
         <%- pv_texts[0] %>
