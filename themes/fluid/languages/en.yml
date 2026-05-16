@@ -62,6 +62,7 @@ post:
     SA: 'SA - Share-alike'
     NC: 'NC - Non-commercial'
     ND: 'ND - No derivative works'
+    ZERO: 'CC0 - No Copyright'
 
 footer:
   pv: 'Views: {}'
@@ -72,3 +73,7 @@ search:
   keyword: 'Keyword'
 
 noscript_warning: 'Blog works best with JavaScript enabled'
+
+darkmode:
+  light: 'Light'
+  dark: 'Dark'

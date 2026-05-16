@@ -1,12 +1,10 @@
 <div class="statistics">
-  <!-- pagePV -->
-  <% var page_pv_texts = (theme.footer.statistics.page_pv_format || __('footer.ppv')).split('{}') %>
-  <!-- sitePV -->
-  <% var pv_texts = (theme.footer.statistics.pv_format || __('footer.pv')).split('{}') %>
-  <!-- siteUV -->
-  <% var uv_texts = (theme.footer.statistics.uv_format || __('footer.uv')).split('{}') %>
+  <% let page_pv_texts = (theme.footer.statistics.page_pv_format || __('footer.ppv')).split('{}') %> <!-- 添加页面访问计数 -->
+  <% let pv_texts = (theme.footer.statistics.pv_format || __('footer.pv')).split('{}') %>
+  <% let uv_texts = (theme.footer.statistics.uv_format || __('footer.uv')).split('{}') %>
 
   <% if (theme.footer.statistics.source === 'leancloud') { %>
+    <!-- 添加页面访问计数 -->
     <% if (page_pv_texts.length >= 2) { %>
       <span id="leancloud-page-pv-container" style="display: none">
         <%- page_pv_texts[0] %>
@@ -30,14 +28,32 @@
     <% } %>
     <% import_js(theme.static_prefix.internal_js, 'leancloud.js', 'defer') %>
 
-  <% } else if (theme.footer.statistics.source === 'busuanzi') { %>
+  <% } else if (theme.footer.statistics.source === 'openkounter') { %>
+    <!-- 添加页面访问计数 -->
     <% if (page_pv_texts.length >= 2) { %>
-      <span id="busuanzi_container_page_pv" style="display: none">
+      <span id="openkounter-page-pv-container" style="display: none">
         <%- page_pv_texts[0] %>
-        <span id="busuanzi_value_page_pv"></span>
+        <span id="openkounter-page-pv"></span>
         <%- page_pv_texts[1] %>
       </span>
     <% } %>
+    <% if (pv_texts.length >= 2) { %>
+      <span id="openkounter-site-pv-container" style="display: none">
+        <%- pv_texts[0] %>
+        <span id="openkounter-site-pv"></span>
+        <%- pv_texts[1] %>
+      </span>
+    <% } %>
+    <% if (uv_texts.length >= 2) { %>
+      <span id="openkounter-site-uv-container" style="display: none">
+        <%- uv_texts[0] %>
+        <span id="openkounter-site-uv"></span>
+        <%- uv_texts[1] %>
+      </span>
+    <% } %>
+    <% import_js(theme.static_prefix.internal_js, 'openkounter.js', 'defer') %>
+
+  <% } else if (theme.footer.statistics.source === 'busuanzi') { %>
     <% if (pv_texts.length >= 2) { %>
       <span id="busuanzi_container_site_pv" style="display: none">
         <%- pv_texts[0] %>
@@ -53,5 +69,23 @@
       </span>
     <% } %>
     <% import_js(theme.static_prefix.busuanzi, 'busuanzi.pure.mini.js', 'defer') %>
+
+  <% } else if (theme.footer.statistics.source === 'umami') { %>
+    <% if (pv_texts.length >= 2) { %>
+      <span id="umami-site-pv-container" style="display: none">
+        <%- pv_texts[0] %>
+        <span id="umami-site-pv"></span>
+        <%- pv_texts[1] %>
+      </span>
+    <% } %>
+    <% if (uv_texts.length >= 2) { %>
+      <span id="umami-site-uv-container" style="display: none">
+        <%- uv_texts[0] %>
+        <span id="umami-site-uv"></span>
+        <%- uv_texts[1] %>
+      </span>
+    <% } %>
+    <% import_js(theme.static_prefix.internal_js, 'umami-view.js', 'defer') %>
   <% } %>
+
 </div>
