@@ -4,7 +4,9 @@
 
   & > div:not(:first-child)
     margin .25rem 0
-    font-size .85rem
+    font-size 1rem
+  .footer-content
+    font-weight bold
 
   .statistics
     display flex
@@ -16,10 +18,10 @@
       margin 0 .25rem
 
     & > *:nth-last-child(2):first-child
-      text-align right
+      text-align center
 
     & > *:nth-last-child(2):first-child ~ *
-      text-align left
+      text-align center
 
   .beian
     display flex
@@ -43,6 +45,8 @@
       margin-bottom .1rem
 
   @media (max-width: 424px)
+    .footer-content
+      font-weight bold
     .statistics
       flex-direction column
 
