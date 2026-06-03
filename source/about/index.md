@@ -72,14 +72,14 @@ layout: about
 </style>
 
 
-<h1><p align="center" text-align="center">技术交流群</p></h1>
+<h1 align="center" text-align="center">交流群</h1>
 
 <div class="body">
 <div class="image-container">
-    <img src="/img/info/qq-group.jpg" alt="我们爱编程qq群">
+    <img src="/img/info/qq-group-ros.jpg" alt="ROS/ROS2交流群">
     <div class="image-caption">
-        <p>技术学习交流群（qq群）</p>
-        <p>目标人群：在校在读零基础</p>
+        <p>ROS/ROS2交流群（qq群）</p>
+        <p>目标人群：机器人ROS方向</p>
         <p>主要交流机器人软件领域相关知识，摸鱼聊天</p>
     </div>
 </div>
