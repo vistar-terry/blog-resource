@@ -1079,7 +1079,7 @@ page404:
   subtitle: '404 ╮(╯﹏╰）╭ 404 <br> Page not found.'  # 打字机内容
   # 重定向到首页的延迟(毫秒)
   # Delay in redirecting to home page (milliseconds)
-  redirect_delay: 5000
+  redirect_delay: 6000
 
 
 #---------------------------
@@ -1111,6 +1111,12 @@ links:
       intro: 'test 404',
       link: 'https://www.vistary.cn/404.html',
       image: '/img/head/001.jpg'
+    }
+    - {
+      title: '雨月空间',
+      intro: '专注与你分享技术教程～',
+      link: 'https://www.mintimate.cn',
+      image: 'https://www.mintimate.cn/custom/img/favicon/favicon.png'
     }
 
   # 当成员头像加载失败时，替换为指定图片
