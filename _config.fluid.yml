@@ -475,17 +475,27 @@ footer:
   #   <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
   # '
   content: '
-      <span> 怕什么真理无穷，进一寸有一寸的欢喜 </span>
+      <span> 怕什么真理无穷，进一寸有一寸的欢喜 </span><br>
       <span id="siteRuntime">本站已运行: 正在加载...</span>
       <script>
         const birthDay = new Date("2020-01-01"); 
         const updateRuntime = () => {
-          const diff = Date.now() - birthDay.getTime();
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-          const secs = Math.floor((diff % (1000 * 60)) / 1000);
-          document.getElementById("siteRuntime").innerText = `本站已运行: ${days}天 ${hours}时 ${mins}分 ${secs}秒`;
+          const now = Date.now();
+          const diff = now - birthDay.getTime();
+          
+          // 计算年（按每年 365 天估算，可根据需要调整）
+          const yearMs = 1000 * 60 * 60 * 24 * 365;
+          const years = Math.floor(diff / yearMs);
+          
+          // 剩余毫秒数（扣除整年的部分）
+          const remainingAfterYears = diff % yearMs;
+          
+          const days = Math.floor(remainingAfterYears / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((remainingAfterYears % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const mins = Math.floor((remainingAfterYears % (1000 * 60 * 60)) / (1000 * 60));
+          const secs = Math.floor((remainingAfterYears % (1000 * 60)) / 1000);
+          
+          document.getElementById("siteRuntime").innerText = `本站已运行 ${years}年 ${days}天 ${hours}时 ${mins}分 ${secs}秒`;
         };
         updateRuntime();
         setInterval(updateRuntime, 1000);
