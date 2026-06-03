@@ -7,21 +7,15 @@ layout: about
 
 
 <h2><p align="center" text-align="center">生活</p></h2>
-
-<p align="center" text-align="center">结识有意思的人，畅聊有意思的事，让我们在这里相聚，分享我们的故事，度过美好时光。</p>
-
+<p align="center" text-align="center">结识有意思的人，聊聊有意思的事。</p>
 <h2><p align="center" text-align="center">技术</p></h2>
-
-<p align="center" text-align="center">CSDN专家博主，阿里云专家博主，中国人工智能学会会员。</p>
-
+<p align="center" text-align="center">CSDN专家博主，阿里云专家博主，中国人工智能学会会员，系统架构设计师。</p>
 <p align="center" text-align="center">喜欢一切探索世界的技术，目前从事机器人研发相关工作。</p>
-
 <p align="center" text-align="center">分享机器人领域技术，包括SLAM，ROS，CV，DL等，助力机器人领域研究者成长进步。</p>
 
 
 
-
-![](https://vistary.gitee.io/imgbed/images/writing_girl.gif)
+![](/img/about/writing_girl.gif)
 
 
 
@@ -80,8 +74,6 @@ layout: about
 
 <h1><p align="center" text-align="center">技术交流群</p></h1>
 
-
-
 <div class="body">
 <div class="image-container">
     <img src="/img/info/qq-group.jpg" alt="我们爱编程qq群">
@@ -106,9 +98,6 @@ layout: about
         <p>加我微信拉你进群</p>
     </div>
 </div>
-
-
-
 
 </div>
 

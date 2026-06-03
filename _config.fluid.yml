@@ -1079,7 +1079,7 @@ page404:
   subtitle: '404 ╮(╯﹏╰）╭ 404 <br> Page not found.'  # 打字机内容
   # 重定向到首页的延迟(毫秒)
   # Delay in redirecting to home page (milliseconds)
-  redirect_delay: 3000
+  redirect_delay: 5000
 
 
 #---------------------------
@@ -1109,7 +1109,7 @@ links:
     - {
       title: '测试 404',
       intro: 'test 404',
-      link: 'https://vistary.gitee.io/blog/archives/gh',
+      link: 'https://www.vistary.cn/404.html',
       image: '/img/head/001.jpg'
     }
 
@@ -1130,8 +1130,8 @@ links:
             <p>旨在分享机器人软件领域的相关技术，一起提升机器人领域相关技术能力，为我国机器人研发与制造领域添砖加瓦。</br>
             包括但不限于以下相关技术方向：C/C++、Python、Linux、ROS1、ROS2、OpenCV、Deep-Learning、Machine-Learning、Eigen、Qt等。</p>
           </li>
-          <li>链接：https://blog.csdn.net/maizousidemao</li>
-          <li>图片：https://gitcode.net/maizousidemao/img-bed/-/raw/master/qrCode/wechat.png</li>
+          <li>链接：https://www.vistary.cn</li>
+          <li>图片：https://www.vistary.cn/img/head/Einstein3.png</li>
         </ul>
       '
 
