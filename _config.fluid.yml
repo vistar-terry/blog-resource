@@ -474,7 +474,23 @@ footer:
   #   <i class="iconfont icon-love"></i>
   #   <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
   # '
-  content: '怕什么真理无穷，进一寸有一寸的欢喜'
+  content: '
+      <span> 怕什么真理无穷，进一寸有一寸的欢喜 </span>
+      <span id="siteRuntime">本站已运行: 正在加载...</span>
+      <script>
+        const birthDay = new Date("2020-01-01"); 
+        const updateRuntime = () => {
+          const diff = Date.now() - birthDay.getTime();
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const secs = Math.floor((diff % (1000 * 60)) / 1000);
+          document.getElementById("siteRuntime").innerText = `本站已运行: ${days}天 ${hours}时 ${mins}分 ${secs}秒`;
+        };
+        updateRuntime();
+        setInterval(updateRuntime, 1000);
+      </script>
+    '
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
