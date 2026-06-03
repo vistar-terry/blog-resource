@@ -489,7 +489,7 @@ footer:
           const hours = Math.floor((remainingAfterYears % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const mins = Math.floor((remainingAfterYears % (1000 * 60 * 60)) / (1000 * 60));
           const secs = Math.floor((remainingAfterYears % (1000 * 60)) / 1000);
-          document.getElementById("siteRuntime").innerText = `本站已运行 ${years}年 ${days}天 ${hours}时 ${mins}分 ${secs}秒`;
+          document.getElementById("siteRuntime").innerText = `本站已运行 ${years} 年 ${days} 天 ${hours} 时 ${mins} 分 ${secs} 秒`;
         };
         updateRuntime();
         setInterval(updateRuntime, 1000);
