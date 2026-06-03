@@ -292,7 +292,7 @@ web_analytics:  # 网页访问统计
     # OpenKounter API 服务器地址
     # OpenKounter API server URL
     # server_url: https://open-kounter.mintimate.cn
-    server_url: https://open-kounter-nkib3q8l.edgeone.cool
+    server_url: https://store.vistary.cn
     # 统计页面时获取路径的属性，通常使用 window.location.pathname
     # Get the attribute of the page path during statistics
     path: window.location.pathname
