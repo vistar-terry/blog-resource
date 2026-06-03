@@ -487,20 +487,20 @@ footer:
     # 统计数据来源，使用 leancloud, umami, openkounter 需要设置 `web_analytics` 中对应的参数；使用 busuanzi 不需要额外设置，但是有时不稳定，另外本地运行时 busuanzi 显示统计数据很大属于正常现象，部署后会正常
     # Data source. If use leancloud, umami, openkounter, you need to set the parameter in `web_analytics`
     # Options: busuanzi | leancloud | umami | openkounter
-    source: "openkounter"
+    source: "leancloud"
 
   # 国内大陆服务器的备案信息
   # For Chinese mainland website policy, other areas keep disable
   beian:
-    enable: false
+    enable: true
     # ICP证号
-    icp_text: 京ICP证123456号
+    icp_text: 浙ICP备2026038672号
     # 公安备案号，不填则只显示ICP
-    police_text: 京公网安备12345678号
+    # police_text: 京公网安备12345678号
     # 公安备案的编号，用于URL跳转查询
-    police_code: 12345678
+    # police_code: 12345678
     # 公安备案的图片. 为空时不显示备案图片
-    police_icon: /img/police_beian.png
+    # police_icon: /img/police_beian.png
 
 
 #---------------------------
