@@ -6,14 +6,14 @@
 title: 淋曦的进击手记
 subtitle: ''
 description: '淋曦的进击手记'
-keywords: 万俟淋曦,CSDN,Python
+keywords: 万俟淋曦,CSDN,Python,ROS,Robotics,AI,人工智能,机器学习,深度学习,计算机视觉,算法,编程,技术分享,学习笔记,项目经验,开源贡献
 author: 万俟淋曦
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://vistar-terry.github.io
+url: https://www.vistary.cn/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
