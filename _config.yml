@@ -124,3 +124,7 @@ jsonContent:
       excerpt: false
       categories: false
       tags: true
+
+markdown:
+  plugins:
+    - "@traptitech/markdown-it-katex"
