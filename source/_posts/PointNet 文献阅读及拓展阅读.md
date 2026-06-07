@@ -4,7 +4,7 @@ index_img: /img/article/paper.jpg
 categories: 
 - [PointNet++] 
 tags: [点云, 文献, 深度学习, 计算机视觉]
-date: 2020-7-26 10:00:16
+date: 2020-07-26 10:00:16
 math: true
 ---
 
@@ -78,10 +78,11 @@ math: true
 [Oriol Vinyals](https://arxiv.org/pdf/1511.06391.pdf)等人最近的一项研究探讨了这个问题。他们使用一个带有注意力机制的 read-process-write 网络来消费无序的输入集，并表明他们的网络具有对数字进行排序的能力。然而，由于他们的工作集中在一般集合和NLP应用上，在集合中缺少几何学的作用。
 
 ### 四、本文方法
+
 点云表示为一组三维点 $\{P_i | i=1,...,n\}$，其中每个点 $P_i$ 都是 $(x，y，z)$ 坐标的向量加上额外的功能通道（如颜色、法线等）。为简单和清晰起见，除非另有说明，否则我们仅使用 $(x，y，z)$ 坐标作为点的表示。
 
-我们网络架构的灵感来自于 $\Bbb R^n$ 中的点集属性。
-#### 4.1. $\Bbb R^n$ 中点集的属性 (Properties of Point Sets in $\Bbb R^n$)
+我们网络架构的灵感来自于 $\mathbb R^n$ 中的点集属性。
+#### 4.1. $\mathbb R^n$ 中点集的属性 (Properties of Point Sets in $\mathbb R^n$)
 我们的输入是来自欧几里得空间的点的子集。它有三个主要属性：
 1. 无序性
 2. 点之间的空间关系
@@ -157,13 +158,12 @@ $$
 ##### 4.3.1 网络对函数的拟合能力
 
 对于一个处理点云的网络，通过集合函数的连续性，对输入点集合的微小扰动应该不会对函数值有很大的改变，例如分类或分割分数。
-设 $\chi=\{S:S\subseteq[0,1]^m and |S|=n\}$，而 $f:\chi\to\Bbb R$ 是 $\chi$ 上关于[Hausdorff 距离](https://blog.csdn.net/maizousidemao/article/details/105030333) $d_H(·,·)$ 的连续集函数。即在m维欧式空间中， $\forall\epsilon>0,\exists\delta>0$，对任意 $S,S^\prime \in \chi$，如果 $d_H(S,S^\prime)<\delta$，则 $|f(S)-f(S^\prime)|<\epsilon$。**如果在最大池化层有足够多的神经元，即 $(2.1)$ 中公式的 $K$ 足够大，PointNet 可以拟合任意的函数。**
+设 $\chi=\{S:S\subseteq[0,1]^m and |S|=n\}$，而 $f:\chi\to\mathbb R$ 是 $\chi$ 上关于[Hausdorff 距离](https://blog.csdn.net/maizousidemao/article/details/105030333) $d_H(·,·)$ 的连续集函数。即在m维欧式空间中， $\forall\epsilon>0,\exists\delta>0$，对任意 $S,S^\prime \in \chi$，如果 $d_H(S,S^\prime)<\delta$，则 $|f(S)-f(S^\prime)|<\epsilon$。**如果在最大池化层有足够多的神经元，即 $(2.1)$ 中公式的 $K$ 足够大，PointNet 可以拟合任意的函数。**
 
 然后作者又给出两个定理：
 **Theorem 1.**
-设 $f:\chi\to\Bbb R$ 是 $\chi$ 是关于[Hausdorff 距离](https://blog.csdn.net/maizousidemao/article/details/105030333) $d_H(·,·)$ 的连续集函数，$\forall\epsilon>0$，存在连续函数 $h$ 和对称函数 $g(x_1,...,x_n)=\gamma \circ MAX$，使得对任意 $S \in \chi$ ，有：
+设 $f:\chi\to\mathbb R$ 是 $\chi$ 是关于[Hausdorff 距离](https://blog.csdn.net/maizousidemao/article/details/105030333) $d_H(·,·)$ 的连续集函数，$\forall\epsilon>0$，存在连续函数 $h$ 和对称函数 $g(x_1,...,x_n)=\gamma \circ MAX$，使得对任意 $S \in \chi$ ，有：
 ( 注：$f \circ g=f(g)$ )
-
 
 $$
 \begin{vmatrix}   
@@ -178,10 +178,11 @@ $$
 这一定理主要是为了说明，PointNet 网络的表达能力受到最大池化层的维数的影响，即 $(2.1)$ 中的 $K$，$K$ 越大网络表达能力越强。
 
 ##### 4.3.2 网络的稳定性
+
 下面的定理告诉我们，输入集中的小数据损坏或额外噪声点不太可能改变我们网络的输出：
 **Theorem 2.** 
-假设 $u:\chi \to \Bbb R^K$ 使得 $u=\underset{i=1,...,n}{MAX}\{h(x_i)\}$，并且 $f=\gamma\circ u$ ，那么，
-$（a）若 C_S \subseteq T \subseteq N_S,则 \forall S,\exist C_S,N_S \subseteq \chi,f(T)=f(S)$
+假设 $u:\chi \to \mathbb R^K$ 使得 $u=\max\limits_{i=1,\dots,n}\{h(x_i)\}$，并且 $f=\gamma\circ u$ ，那么，
+$（a）若 C_S \subseteq T \subseteq N_S,则 \forall S,\exists C_S,N_S \subseteq \chi,f(T)=f(S)$
 $（b）|C_S|\leq K$
 
 （a）这一定理表明，对于任何输入数据集 $S$，都存在一个最小集 $C_S$ 和一个最大集 $N_S$，使得对 $C_S$ 和 $N_S$ 之间的任何集合 $T$，其网络输出都和 $S$ 一样。

@@ -19,7 +19,8 @@ date: 2020-03-29 21:26:00
 dpkg -i 软件名.deb
 ```
 　　开始一切都挺顺利，然而命运终于还是对我下手了。
-　　![这里写图片描述](https://vistary.gitee.io/imgbed/images/dpkg_locked.jpg)
+
+　![报错](/img/article/202003/dpkg_locked.jpg)　
 
 ### **二、问题分析**
 
@@ -35,10 +36,10 @@ ps -aux | grep dpkg
 　　（第一次向命运的抗争以失败告终）
 　　2. 既然找不到心中的那个进程（我知道你一定在那，就是找不到你，救不出我的dpkg），重启吧，一切重新开始。
 　　。。。。。
-　　开机后竟然可以了，可能是那个进程已经kill掉了，放回了我的dpkg。
-　　好了，继续安装网易云。。。
-　　不过命运又皮了一下，有未能满足的依赖关系，解决办法看这篇文章，[
-linux安装软件报错：有未能满足的依赖关系](https://blog.csdn.net/maizousidemao/article/details/82109038)
+　　　　　　开机后竟然可以了，可能是那个进程已经kill掉了，放回了我的dpkg。
+　　　　　　好了，继续安装网易云。。。
+　　　　　　不过命运又皮了一下，有未能满足的依赖关系，解决办法看这篇文章，[
+　　　　linux安装软件报错：有未能满足的依赖关系](https://blog.csdn.net/maizousidemao/article/details/82109038)
 
 ### **三、解决方法**
 

@@ -16,7 +16,7 @@ date: 2020-04-05 09:50:00
 
 这是律盘，看古琴课程时，老师有一个，可以查找各弦散按音位，觉得挺好用，便做了一个。这里只聊聊怎么实现鼠标拖动旋转，可以借鉴到其他开发。
 
-![在这里插入图片描述](img/article/202004/lvpan.gif)
+![](img/article/202004/lvpan.gif)
 
 ### 一、实现思路
 
@@ -92,7 +92,7 @@ void Disk::mouseMoveEvent(QMouseEvent *event){
 
  oldAngle 和 currentAngle 都对 360 取余，保证他们小于等于 360，否则会出现跳变。当顺时针转动，currentAngle = oldAngle + mouseAngle 很容易理解，逆时针时本应该是 currentAngle = oldAngle - mouseAngle，这就涉及到 “1. 旋转角度” 中为什么要用 360 减去了。lineBegin.angleTo(lineEnd) 函数测量角度是从 lineBegin 到 lineEnd 沿逆时针方向测量的，示意图如下：
 
-![在这里插入图片描述](img/article/202004/rotate.png)
+![旋转角计算示意图](img/article/202004/rotate.png)
 
 我选择了使顺时针理解容易，且 currentAngle 已初始化为 0 ，所以用 360 减去测量角度。如果鼠标逆时针拖动，比如图中右边的情况，mouseAngle = 307，oldAngle = 77，则 currentAngle = oldAngle + mouseAngle = 384，然后对 360 取余，正好是 24，最后利用这个角度进行旋转，一次操作结束。
 
@@ -102,6 +102,6 @@ void Disk::mouseMoveEvent(QMouseEvent *event){
 
 现在该软件为 2.0 版本，添加了十二律、五音、简谱、西音、工尺对应查找功能，如下：
 
-![在这里插入图片描述](img/article/202004/lvpan2.png)
+![律盘2.0](img/article/202004/lvpan2.png)
 
 如果你想使用这个软件，请联系我，QQ：1055311345。
