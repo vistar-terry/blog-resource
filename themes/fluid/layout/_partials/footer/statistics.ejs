@@ -31,9 +31,9 @@
   <% } else if (theme.footer.statistics.source === 'openkounter') { %>
     <!-- 添加页面访问计数 -->
     <% if (page_pv_texts.length >= 2) { %>
-      <span id="openkounter-page-pv-container" style="display: none">
+      <span id="openkounter-page-views-container" style="display: none">
         <%- page_pv_texts[0] %>
-        <span id="openkounter-page-pv"></span>
+        <span id="openkounter-page-views"></span>
         <%- page_pv_texts[1] %>
       </span>
     <% } %>

@@ -138,7 +138,7 @@
     }
 
     // 请求页面浏览数并自增
-    const viewCtn = document.querySelector('#openkounter-page-pv-container');
+    const viewCtn = document.querySelector('#openkounter-page-views-container');
     if (viewCtn) {
       const pathConfig = CONFIG.web_analytics.openkounter.path || 'window.location.pathname';
       const path = eval(pathConfig);
@@ -148,7 +148,7 @@
         if (enableIncr) {
           incrArr.push(buildIncrement(record.objectId));
         }
-        const ele = document.querySelector('#openkounter-page-pv');
+        const ele = document.querySelector('#openkounter-page-views');
         if (ele) {
           ele.innerText = (record.time || 0) + (enableIncr ? 1 : 0);
           viewCtn.style.display = 'inline';

@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://www.vistary.cn/
+url: https://www.vistary.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -125,6 +125,15 @@ jsonContent:
       categories: false
       tags: true
 
+
 markdown:
   plugins:
     - "@traptitech/markdown-it-katex"
+  render:
+    html: true          # 允许在 Markdown 中使用 HTML
+    linkify: true       # 自动识别网址为超链接
+
+
+# KaTeX CDN（复杂公式全支持）
+katex:
+  css: https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
