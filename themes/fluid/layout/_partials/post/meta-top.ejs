@@ -52,9 +52,9 @@
         </span>
         <% import_js(theme.static_prefix.internal_js, 'leancloud.js', 'defer') %>
       <% } else if (theme.post.meta.views.source === 'openkounter')  { %>
-        <span id="openkounter-page-views-container" style="display: none">
+        <span id="openkounter-page-pv-container" style="display: none">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <%- views_texts[0] %><span id="openkounter-page-views"></span><%- views_texts[1] %>
+          <%- views_texts[0] %><span id="openkounter-page-pv"></span><%- views_texts[1] %>
         </span>
         <% import_js(theme.static_prefix.internal_js, 'openkounter.js', 'defer') %>
 
